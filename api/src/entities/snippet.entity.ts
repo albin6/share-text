@@ -4,6 +4,6 @@ export interface ISnippetEntity {
   title: string;
   description: string;
   expiration: Date | null;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }

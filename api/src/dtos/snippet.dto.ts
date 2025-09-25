@@ -12,6 +12,6 @@ export interface SnippetDto {
   description: string;
   content: string;
   expiration: Date | null;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt?: Date;
+  updatedAt?: Date;
 }

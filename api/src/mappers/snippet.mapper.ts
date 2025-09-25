@@ -15,20 +15,13 @@ export class SnippetMapper {
     };
   }
 
-  static toEntity(
-    dto: CreateSnippetDto,
-    id: string,
-    slug: string
-  ): ISnippetEntity {
-    const now = new Date();
+  static toEntity(dto: CreateSnippetDto, slug: string): ISnippetEntity {
     return {
-      id: id,
+      id: "",
       slug: slug,
       title: dto.title,
       description: dto.description || "",
       expiration: dto.expiration || null,
-      createdAt: now,
-      updatedAt: now,
     };
   }
 }
