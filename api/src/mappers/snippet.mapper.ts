@@ -2,13 +2,12 @@ import { CreateSnippetDto, SnippetDto } from "../dtos/snippet.dto";
 import { ISnippetEntity } from "../entities/snippet.entity";
 
 export class SnippetMapper {
-  static toDto(entity: ISnippetEntity, content: string): SnippetDto {
+  static toDto(entity: ISnippetEntity): SnippetDto {
     return {
       id: entity.id,
       slug: entity.slug,
       title: entity.title,
       description: entity.description,
-      content: content,
       expiration: entity.expiration,
       createdAt: entity.createdAt,
       updatedAt: entity.updatedAt,

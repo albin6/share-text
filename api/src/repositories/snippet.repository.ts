@@ -10,12 +10,11 @@ export class SnippetRepository implements ISnippetRepository {
     this._snippetModel = SnippetModel;
   }
 
-  async create(entity: ISnippetEntity, content: string): Promise<void> {
+  async create(entity: ISnippetEntity): Promise<void> {
     await this._snippetModel.create({
       slug: entity.slug,
       title: entity.title,
       description: entity.description,
-      content: content,
       expiration: entity.expiration,
     });
   }

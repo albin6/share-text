@@ -10,7 +10,6 @@ export interface SnippetDto {
   slug: string;
   title: string;
   description: string;
-  content: string;
   expiration: Date | null;
   createdAt?: Date;
   updatedAt?: Date;
