@@ -1,6 +1,5 @@
 export interface CreateSnippetDto {
   title: string;
-  content: string;
   description?: string;
   expiration?: Date | null;
 }
