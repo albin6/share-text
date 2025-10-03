@@ -14,8 +14,8 @@ export class SnippetService implements ISnippetService {
   async createSnippet(data: CreateSnippetDto): Promise<ServiceResponse<{}>> {
     try {
       const snippetEntity = SnippetMapper.toEntity(data, "create");
-      await this._snippetRepository.create(snippetEntity);
-      return { success: true, data: {} };
+      const snippet = await this._snippetRepository.create(snippetEntity);
+      return { success: true, data: { slug: snippet?.slug } };
     } catch (error) {
       return { success: false, error: (error as Error).message };
     }

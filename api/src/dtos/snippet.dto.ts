@@ -1,7 +1,7 @@
 export interface CreateSnippetDto {
   title: string;
-  description?: string;
-  expiration?: Date | null;
+  description: string;
+  expiration: Date | null;
 }
 
 export interface SnippetDto {
