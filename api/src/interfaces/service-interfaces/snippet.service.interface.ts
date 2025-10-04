@@ -3,4 +3,5 @@ import { ServiceResponse } from "../../types/service-response";
 
 export interface ISnippetService {
   createSnippet(data: CreateSnippetDto): Promise<ServiceResponse<{}>>;
+  getSnippetBySlug(slug: string): Promise<ServiceResponse<SnippetDto | null>>;
 }
