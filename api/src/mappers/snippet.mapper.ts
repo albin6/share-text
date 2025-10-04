@@ -1,8 +1,8 @@
 import { CreateSnippetDto, SnippetDto } from "../dtos/snippet.dto";
-import { ISnippetEntity } from "../entities/snippet.entity";
+import { SnippetEntity } from "../entities/snippet.entity";
 
 export class SnippetMapper {
-  static toDto(entity: ISnippetEntity): SnippetDto {
+  static toDto(entity: SnippetEntity): SnippetDto {
     return {
       id: entity.id,
       slug: entity.slug,
@@ -14,13 +14,15 @@ export class SnippetMapper {
     };
   }
 
-  static toEntity(dto: CreateSnippetDto, slug: string): ISnippetEntity {
-    return {
+  static toEntity(dto: CreateSnippetDto, slug: string): SnippetEntity {
+    return new SnippetEntity({
       id: "",
-      slug: slug,
+      slug,
       title: dto.title,
-      description: dto.description || "",
-      expiration: dto.expiration || null,
-    };
+      description: dto.description,
+      expiration: dto.expiration,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    });
   }
 }
